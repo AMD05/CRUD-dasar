@@ -9,6 +9,11 @@ def read_console():
         nama, nomor, hari = x
         print ("{:<5} {:<15} {:<15} {:<10}".format(index + 1, nama, nomor, hari))
 
+def create_console(nama, nomor, hari):
+    list_pekerja.append(nama)
+    list_id.append(nomor)
+    list_hari.append(hari)
+
 list_pekerja=["agil", "surya", "aldi"]
 list_id=[101, 102, 103]
 list_hari=["senin", "selasa", "rabu"]
@@ -23,9 +28,14 @@ while True :
     print ("=======================")
     print (" pilih opsi : ")
     menu =int(input()) 
-    if menu == 1 : 
-        create_console()
-
+    if menu == 1 :
+        print ("Masukkan Nama : ")
+        nama = str(input())
+        print ("Masukkan ID : ")
+        nomor = int(input()) 
+        print ("masukkan Hari : ")
+        hari = str(input())
+        create_console(nama, nomor, hari)
     elif menu == 2 :
         read_console()
 
@@ -35,5 +45,8 @@ while True :
     elif menu == 4 :
         delete_console()
 
-    else :
+    elif menu == 0 :
         break
+
+    else :
+        print("opsi tidak ditemukan")
