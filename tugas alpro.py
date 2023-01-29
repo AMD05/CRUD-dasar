@@ -39,6 +39,14 @@ def update_console(ubah, nama, nomor, hari) :
     list_pekerja[ubah - 1] = nama
     list_id[ubah - 1] = nomor
     list_hari[ubah - 1] = hari
+    string_nama = ",".join(list_pekerja)
+    string_id = ",".join(str(x) for x in list_id)
+    string_hari = ",".join(list_hari)
+    open_file = open("ListPekerja.txt", "w")
+    open_file.write(string_nama + "\n")
+    open_file.write(string_id + "\n")
+    open_file.write(string_hari)
+    open_file.close()
 
 open_file = open("ListPekerja.txt", "r")
 count = 0
@@ -87,13 +95,15 @@ while True :
     elif menu == 3 :
         print ("Data yang diubah : ")
         ubah = int(input())
-        print ("Masukkan Nama : ")
-        nama = str(input())
-        print ("Masukkan id pekerja : ")
-        nomor = int(input())
-        print ("masukkan hari : ")
-        hari = str(input())
-        update_console(ubah, nama, nomor, hari)
+        if ubah <=len(list_pekerja) :
+            print ("Masukkan Nama : ")
+            nama = str(input())
+            print ("Masukkan id pekerja : ")
+            nomor = int(input())
+            print ("masukkan hari : ")
+            hari = str(input())
+            update_console(ubah, nama, nomor, hari)
+            read_console()
 
     elif menu == 4 :
         print("Data yang akan di hapus : ")
