@@ -19,6 +19,11 @@ def delete_console(hapus) :
     list_id.pop(hapus - 1)
     list_hari.pop(hapus - 1)
 
+def update_console(ubah, nama, nomor, hari) :
+    list_pekerja[ubah - 1] = nama
+    list_id[ubah - 1] = nomor
+    list_hari[ubah - 1] = hari
+
 list_pekerja=["agil", "surya", "aldi"]
 list_id=[101, 102, 103]
 list_hari=["senin", "selasa", "rabu"]
@@ -45,7 +50,15 @@ while True :
         read_console()
 
     elif menu == 3 :
-        update_console()
+        print ("Data yang diubah : ")
+        ubah = int(input())
+        print ("Masukkan Nama : ")
+        nama = str(input())
+        print ("Masukkan id pekerja : ")
+        nomor = int(input())
+        print ("masukkan hari : ")
+        hari = str(input())
+        update_console(ubah, nama, nomor, hari)
 
     elif menu == 4 :
         print("Data yang akan di hapus : ")
