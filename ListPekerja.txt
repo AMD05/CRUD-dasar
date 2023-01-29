@@ -1,3 +1,3 @@
-agil,surya,aldi
-101,102,103
-senin,selasa,rabu
+agil,surya,aldi,rendi
+101,102,103,104
+senin,selasa,rabu,kamis
