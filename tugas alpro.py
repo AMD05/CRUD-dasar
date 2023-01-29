@@ -13,6 +13,14 @@ def create_console(nama, nomor, hari):
     list_pekerja.append(nama)
     list_id.append(nomor)
     list_hari.append(hari)
+    string_nama = ",".join(list_pekerja)
+    string_id = ",".join(str(x) for x in list_id)
+    string_hari = ",".join(list_hari)
+    open_file = open("ListPekerja.txt", "w")
+    open_file.write(string_nama + "\n")
+    open_file.write(string_id + "\n")
+    open_file.write(string_hari)
+    open_file.close()
 
 def delete_console(hapus) :
     list_pekerja.pop(hapus - 1)
