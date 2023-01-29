@@ -1,13 +1,13 @@
 def read_console():
     print ("==============================================")
-    print ("                daftar pekerja                ")
+    print ("|               daftar pekerja               |")
     print ("==============================================")
     data = zip(list_pekerja, list_id, list_hari)
-    print ("{:<5} {:<15} {:<15} {:<10}".format('No.', 'Nama', 'ID', 'Hari'))
+    print ("| {:<5}| {:<20}| {:<5}| {:<7}|".format('No.', 'Nama', 'ID', 'Hari'))
     print ("==============================================")
     for index, x in enumerate(data):
         nama, nomor, hari = x
-        print ("{:<5} {:<15} {:<15} {:<10}".format(index + 1, nama, nomor, hari))
+        print ("| {:<5}| {:<20}| {:<5}| {:<7}|".format(index + 1, nama, nomor, hari))
 
 def create_console(nama, nomor, hari):
     list_pekerja.append(nama)
@@ -117,3 +117,4 @@ while True :
 
     else :
         print("opsi tidak ditemukan")
+    print("==============================================")
