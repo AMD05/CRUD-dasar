@@ -26,6 +26,14 @@ def delete_console(hapus) :
     list_pekerja.pop(hapus - 1)
     list_id.pop(hapus - 1)
     list_hari.pop(hapus - 1)
+    string_nama = ",".join(list_pekerja)
+    string_id = ",".join(str(x) for x in list_id)
+    string_hari = ",".join(list_hari)
+    open_file = open("ListPekerja.txt", "w")
+    open_file.write(string_nama + "\n")
+    open_file.write(string_id + "\n")
+    open_file.write(string_hari)
+    open_file.close()
 
 def update_console(ubah, nama, nomor, hari) :
     list_pekerja[ubah - 1] = nama
@@ -90,7 +98,9 @@ while True :
     elif menu == 4 :
         print("Data yang akan di hapus : ")
         hapus = int(input())
-        delete_console(hapus)
+        if hapus <=len(list_pekerja):
+            delete_console(hapus)
+            read_console()
 
     elif menu == 0 :
         break
