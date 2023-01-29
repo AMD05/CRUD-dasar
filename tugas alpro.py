@@ -14,11 +14,16 @@ def create_console(nama, nomor, hari):
     list_id.append(nomor)
     list_hari.append(hari)
 
+def delete_console(hapus) :
+    list_pekerja.pop(hapus - 1)
+    list_id.pop(hapus - 1)
+    list_hari.pop(hapus - 1)
+
 list_pekerja=["agil", "surya", "aldi"]
 list_id=[101, 102, 103]
 list_hari=["senin", "selasa", "rabu"]
 
-list_menu = ["1. create data pekerja", "2. read data pekerja", "3. update data pekerja", "4. delete data pekerja"]
+list_menu = ["1. create data pekerja", "2. read data pekerja", "3. update data pekerja", "4. delete data pekerja", "0. keluar program"]
 while True :
     print ("=======================")
     print ("       menu utama      ")
@@ -43,7 +48,9 @@ while True :
         update_console()
 
     elif menu == 4 :
-        delete_console()
+        print("Data yang akan di hapus : ")
+        hapus = int(input())
+        delete_console(hapus)
 
     elif menu == 0 :
         break
