@@ -24,9 +24,28 @@ def update_console(ubah, nama, nomor, hari) :
     list_id[ubah - 1] = nomor
     list_hari[ubah - 1] = hari
 
-list_pekerja=["agil", "surya", "aldi"]
-list_id=[101, 102, 103]
-list_hari=["senin", "selasa", "rabu"]
+open_file = open("ListPekerja.txt", "r")
+count = 0
+
+list_pekerja = []
+list_id = []
+list_hari = []
+
+while True:
+    count += 1
+    data = open_file.readline()
+    
+    if not data:
+        break
+    
+    if count == 1 :
+        list_pekerja = data.rstrip().split(",")
+    
+    elif count == 2 :
+        list_id = data.rstrip().split(",")
+
+    elif count == 3 :
+        list_hari = data.rstrip().split(",")
 
 list_menu = ["1. create data pekerja", "2. read data pekerja", "3. update data pekerja", "4. delete data pekerja", "0. keluar program"]
 while True :
